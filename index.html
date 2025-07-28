@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NH Foods</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Carousel Styling */
+        .carousel {
+    position: relative;
+}
+
+.carousel-inner {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+.carousel-item {
+    flex: 0 0 auto;
+    width: 25%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+.carousel-button.prev {
+    left: 0;
+}
+.carousel-button.next {
+    right: 0;
+}
+@media (max-width: 640px) {
+    .carousel-item {
+        width: 50%;
+    }
+}
+
+        /* WhatsApp Icon Animation */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        .whatsapp-float img {
+            width: 60px;
+            height: 60px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .whatsapp-float img:hover {
+            transform: scale(1.2);
+        }
+        /* Hero Section Overlay */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3); /* Semi-transparent overlay */
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">NH Foods</h1>
+            <nav class="space-x-4">
+                <a href="#home" class="text-gray-700 hover:text-blue-500">Home</a>
+                <a href="#about" class="text-gray-700 hover:text-blue-500">About</a>
+                <a href="#portfolio" class="text-gray-700 hover:text-blue-500">Portfolio</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-500">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-gray-100 h-96 flex items-center justify-center relative">
+        <div class="hero-overlay"></div>
+        <div class="text-center hero-content">
+            <h2 class="text-4xl font-bold mb-4 text-gray-800">Welcome to NH Foods</h2>
+            <p class="text-lg mb-6 text-gray-800">Your trusted partner for premium meat, poultry, seafood, and dairy products in Dubai.</p>
+            <a href="assets\Company_Prop\NHFoods_COMPANY PROFILE.pdf" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 flex items-center justify-center">Download Our Brochure</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">About Us</h2>
+            <p class="text-lg text-gray-700 text-center max-w-2xl mx-auto">
+                NH Foods is a UAE-based food trading company specializing in premium meat, poultry, seafood, and dairy products.
+                We are dedicated to delivering consistent quality and reliable service to the foodservice and hospitality sectors.
+                Rooted in integrity and driven by a passion for excellence, we aim to be a trusted partner in every kitchen we serve.
+            </p>
+        </div>
+    </section>
+
+    <!-- Products Carousel Section -->
+     <!-- Products Carousel Section -->
+    <section id="portfolio" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Our Products</h2>
+            <div class="carousel">
+                <button class="carousel-button prev" onclick="moveCarousel('products', -1)">&#10094;</button>
+                <div class="carousel-inner" id="products-carousel">
+                    <!-- Product images with corrected paths -->
+                    <div class="carousel-item"><img src="assets/All-Food-Items.jpg" alt="All Foods" class="w-full h-48 object-cover rounded"></div>
+                    <div class="carousel-item"><img src="assets/Beef-Cube.jpg" alt="Beef-Cube" class="w-full h-48 object-cover rounded"></div>
+                    <div class="carousel-item"><img src="assets/Beef-Cuts-Description.jpg" alt="Beef-Cuts-Description" class="w-full h-48 object-cover rounded"></div>
+                    <div class="carousel-item"><img src="assets/Beef-Round-Mince.jpg" alt="Beef-Round-Mince" class="w-full h-48 object-cover rounded"></div>
+                    <div class="carousel-item"><img src="assets/Beef-Steak-Oil.jpg" alt="Beef-Steak-Oil" class="w-full h-48 object-cover rounded"></div>
+                    <div class="carousel-item"><img src="assets/Beef-Steak.jpg" alt="Beef-Steak" class="w-full h-48 object-cover rounded"></div>
+                    <div class="carousel-item"><img src="assets/Chicken-Whole.jpg" alt="Chicken-Whole" class="w-full h-48 object-cover rounded"></div>
+                    <!-- <div class="carousel-item"><img src="assets/Crab-Leg.jpg" alt="Crab-Leg" class="w-full h-48 object-cover rounded"></div> -->
+                    <div class="carousel-item"><img src="assets/Crab-Steak.jpg" alt="Crab-Steak" class="w-full h-48 object-cover rounded"></div>
+                    <div class="carousel-item"><img src="assets/Fish-Cut.jpg" alt="Fish-Cut" class="w-full h-48 object-cover rounded"></div>
+                    <div class="carousel-item"><img src="assets/Fresh-Seafood-Cut.jpg" alt="Fresh-Seafood-Cut" class="w-full h-48 object-cover rounded"></div>
+                    <div class="carousel-item"><img src="assets/Full-Fat.jpg" alt="Full-Fat" class="w-full h-48 object-cover rounded"></div>
+                    <div class="carousel-item"><img src="assets/Kebab.jpg" alt="Kebab" class="w-full h-48 object-cover rounded"></div>
+                    <!-- <div class="carousel-item"><img src="assets/Meat-Whole.jpg" alt="Meat-Whole" class="w-full h-48 object-cover rounded"></div>
+                    <div class="carousel-item"><img src="assets/Meat-Whole2.jpg" alt="Meat-Whole2" class="w-full h-48 object-cover rounded"></div> -->
+                    <div class="carousel-item"><img src="assets/Meat-Cut.jpg" alt="Meat-Cut" class="w-full h-48 object-cover rounded"></div>
+                    <div class="carousel-item"><img src="assets/Meat-Fried.jpg" alt="Meat-Fried" class="w-full h-48 object-cover rounded"></div>
+                    <div class="carousel-item"><img src="assets/Meat-Leg-Cut.jpg" alt="Meat-Leg-Cut" class="w-full h-48 object-cover rounded"></div>
+                    <div class="carousel-item"><img src="assets/Mutton-Whole.jpg" alt="Mutton-Whole" class="w-full h-48 object-cover rounded"></div>
+                    <div class="carousel-item"><img src="assets/Prawns-ICE-Cube.jpg" alt="Prawns-ICE-Cube" class="w-full h-48 object-cover rounded"></div>
+                    <!-- <div class="carousel-item"><img src="assets/Squid-JAP-KOR.jpg" alt="Squid-JAP-KOR" class="w-full h-48 object-cover rounded"></div> -->
+                </div>
+                <button class="carousel-button next" onclick="moveCarousel('products', 1)">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product List Section -->
+    <!-- <section id="products-list" class="py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Product List</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-4 rounded shadow"><h3 class="font-bold">Beef</h3><p>Premium cuts of beef for all culinary needs.</p></div>
+                <div class="bg-white p-4 rounded shadow"><h3 class="font-bold">Lamb</h3><p>Tender and flavorful lamb cuts.</p></div>
+                <div class="bg-white p-4 rounded shadow"><h3 class="font-bold">Chicken</h3><p>Fresh and high-quality poultry.</p></div>
+                <div class="bg-white p-4 rounded shadow"><h3 class="font-bold">Turkey</h3><p>Whole and cut turkey options.</p></div>
+                <div class="bg-white p-4 rounded shadow"><h3 class="font-bold">Salmon</h3><p>Fresh and sustainable salmon fillets.</p></div>
+                <div class="bg-white p-4 rounded shadow"><h3 class="font-bold">Shrimp</h3><p>Fresh and frozen shrimp varieties.</p></div>
+                <div class="bg-white p-4 rounded shadow"><h3 class="font-bold">Tuna</h3><p>High-quality tuna for sushi and more.</p></div>
+                <div class="bg-white p-4 rounded shadow"><h3 class="font-bold">Cheese</h3><p>Artisanal and bulk cheese options.</p></div>
+                <div class="bg-white p-4 rounded shadow"><h3 class="font-bold">Yogurt</h3><p>Creamy and natural yogurt varieties.</p></div>
+                <div class="bg-white p-4 rounded shadow"><h3 class="font-bold">Butter</h3><p>Rich and creamy butter products.</p></div>
+                <div class="bg-white p-4 rounded shadow"><h3 class="font-bold">Milk</h3><p>Fresh and long-life milk options.</p></div>
+                <div class="bg-white p-4 rounded shadow"><h3 class="font-bold">Pork</h3><p>Premium pork cuts for various dishes.</p></div>
+                <div class="bg-white p-4 rounded shadow"><h3 class="font-bold">Duck</h3><p>High-quality duck for gourmet meals.</p></div>
+                <div class="bg-white p-4 rounded shadow"><h3 class="font-bold">Cod</h3><p>Fresh and frozen cod fillets.</p></div>
+                <div class="bg-white p-4 rounded shadow"><h3 class="font-bold">Cream</h3><p>Rich cream for cooking and desserts.</p></div>
+                <div class="bg-white p-4 rounded shadow"><h3 class="font-bold">Eggs</h3><p>Fresh farm eggs, organic options available.</p></div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Brands Carousel Section -->
+    <section id="brands" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Our Brands</h2>
+            <div class="carousel">
+                <button class="carousel-button prev" onclick="moveCarousel('brands', 1)">&#10094;</button>
+                <div class="carousel-inner" id="brands-carousel">
+                    <!-- Placeholder images for brands -->
+                    <div class="carousel-item"><img src="assets\Brand_Logos\Anglos.jpg" alt="Brand 1" class="w-full h-48 object-contain rounded"></div>
+                    <div class="carousel-item"><img src="assets\Brand_Logos\aurora.jpg" alt="Brand 2" class="w-full h-48 object-contain rounded"></div>
+                    <div class="carousel-item"><img src="assets\Brand_Logos\Cancoe.jpg" alt="Brand 3" class="w-full h-48 object-contain rounded"></div>
+                    <div class="carousel-item"><img src="assets\Brand_Logos\Friboi.jpg" alt="Brand 4" class="w-full h-48 object-contain rounded"></div>
+                    <div class="carousel-item"><img src="assets\Brand_Logos\Greater-Omaha.jpg" alt="Brand 5" class="w-full h-48 object-contain rounded"></div>
+                    <div class="carousel-item"><img src="assets\Brand_Logos\Minerva-Foods.jpg" alt="Brand 6" class="w-full h-48 object-contain rounded"></div>
+                    <div class="carousel-item"><img src="assets\Brand_Logos\Nat.jpg" alt="Brand 7" class="w-full h-48 object-contain rounded"></div>
+                    <div class="carousel-item"><img src="assets\Brand_Logos\Seara.jpg" alt="Brand 8" class="w-full h-48 object-contain rounded"></div>
+                    <!-- <div class="carousel-item"><img src="https://via.placeholder.com/300x200?text=Brand+9" alt="Brand 9" class="w-full h-48 object-contain rounded"></div>
+                    <div class="carousel-item"><img src="https://via.placeholder.com/300x200?text=Brand+10" alt="Brand 10" class="w-full h-48 object-contain rounded"></div> -->
+                </div>
+                <button class="carousel-button next" onclick="moveCarousel('brands', 1)">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Get in Touch</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="text-center">
+                    <p class="text-lg text-gray-700 mb-4"><i class="fas fa-phone-alt mr-2"></i>Phone: +971 50 836 2661</p>
+                    <p class="text-lg text-gray-700 mb-4"><i class="fas fa-envelope mr-2"></i>Email: <a href="mailto:haneefa@nhfoodsglobal.com" class="text-blue-500">haneefa@nhfoodsglobal.com</a></p>
+                    <p class="text-lg text-gray-700 mb-4"><i class="fas fa-globe mr-2"></i>Website: <a href="http://www.nhfoodsglobal.com" class="text-blue-500">www.nhfoodsglobal.com</a></p>
+                    <p class="text-lg text-gray-700"><i class="fab fa-instagram mr-2"></i>Social Media: <a href="https://instagram.com/nhfoodsglobal" class="text-blue-500">@nhfoodsglobal</a></p>
+                </div>
+                <div class="text-center">
+                    <p class="text-lg text-gray-700 font-bold">NAJM ALHUDA FOODSTUFF TRADING LLC</p>
+                    <p class="text-lg text-gray-700">Dubai, United Arab Emirates</p>
+                    <p class="text-lg text-gray-700 italic">Precision. Purity. Everyday.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-4">
+        <p>© 2025 NAJM ALHUDA FOODSTUFF TRADING LLC. All rights reserved.</p>
+    </footer>
+
+    <!-- WhatsApp Floating Icon -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/+971508362661" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" title="Contact us on WhatsApp">
+        </a>
+    </div>
+
+    <!-- Carousel JavaScript -->
+    <script>
+    function moveCarousel(carouselId, direction) {
+        const carousel = document.getElementById(`${carouselId}-carousel`);
+        const item = carousel.querySelector('.carousel-item');
+        if (!item) return;
+
+        const itemWidth = item.offsetWidth + 20; // include padding
+        carousel.scrollBy({ left: direction * itemWidth * 1, behavior: 'smooth' });
+    }
+
+    function autoScrollProducts() {
+        moveCarousel('products', 1);
+    }
+
+    let autoScrollInterval = setInterval(autoScrollProducts, 4000);
+
+    const productsCarousel = document.getElementById('products-carousel');
+    productsCarousel.addEventListener('mouseenter', () => clearInterval(autoScrollInterval));
+    productsCarousel.addEventListener('mouseleave', () => {
+        autoScrollInterval = setInterval(autoScrollProducts, 4000);
+    });
+</script>
+
+</body>
+</html>
