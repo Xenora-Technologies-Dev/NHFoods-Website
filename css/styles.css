@@ -1478,6 +1478,25 @@ p {
   font-size: 0.875rem;
 }
 
+.footer-credit {
+  margin-top: var(--space-lg);
+  text-align: center;
+  font-size: 0.8125rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-credit a {
+  color: var(--brand-secondary);
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.footer-credit a:hover {
+  color: white;
+}
+
 .footer-social {
   display: flex;
   gap: var(--space-md);
